@@ -7,3 +7,9 @@ map '/' do
 end
 
 Rails.application.load_server
+
+Rails.application.routes.draw do
+  root "dice#home" # This sets the homepage with 'Dice Roll' heading and links
+  get "/dice/:dice_count/:sides", to: "dice#roll"
+end
+
